@@ -9,7 +9,10 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        { "glob": "systems-short-list.json", "input": "./", "output": "./assets/" },
+        { "glob": "system-details.json", "input": "./", "output": "./assets/" },
+        { "glob": "systems-long-list.json", "input": "./", "output": "./assets/" }        
       ],
       "index": "index.html",
       "main": "main.ts",

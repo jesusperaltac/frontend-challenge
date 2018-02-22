@@ -2,6 +2,7 @@
   "name": "frontend-challenge",
   "version": "0.0.0",
   "license": "MIT",
+  "author": "Jesus Peralta",  
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
