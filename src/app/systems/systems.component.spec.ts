@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SystemsComponent } from './systems.component';
 import { SystemComponent } from './system/system.component';
+import { SystemService } from '../services/system.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('SystemsComponent', () => {
   let component: SystemsComponent;
@@ -9,7 +11,9 @@ describe('SystemsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SystemsComponent, SystemComponent ]
+      declarations: [ SystemsComponent, SystemComponent ],
+      providers: [SystemService],
+      imports: [HttpClientModule]      
     })
     .compileComponents();
   }));

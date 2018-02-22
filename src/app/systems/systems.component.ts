@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { System } from '../models/System';
+import { SystemService } from '../services/system.service';
 
 @Component({
   selector: 'app-systems',
@@ -8,16 +9,20 @@ import { System } from '../models/System';
 })
 export class SystemsComponent implements OnInit {
 
-  systems: System[] = [];
+  private systems: System[] = [];
   
-  constructor() { }
+  constructor(private systemsService: SystemService) { }
 
   ngOnInit() {
     this.loadSystems();
   }
 
   loadSystems(): void {
-    // TODO Implement a service to read the JSON file "systems-short-list.json and load the systems"
+    this.systemsService.getSystems()
+      .subscribe(systems => {
+        this.systems = systems[0]['systems'];
+      });
+      
 }
 
 }
